@@ -1,5 +1,8 @@
 package com.dev.spring.productlist;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class MyComponent {
 
     public MyComponent() {

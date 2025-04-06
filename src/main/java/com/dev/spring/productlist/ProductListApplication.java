@@ -9,10 +9,24 @@ public class ProductListApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(ProductListApplication.class, args);
-		MyComponent myComponent = context.getBean(MyComponent.class);
-		myComponent.getMessage();
+
+		//Let MyComponent is a third party library
+		App app = context.getBean(App.class);
+		app.run();
+
+		//Object Create using @Component annotation
+		/**
+		 * 	ConfigurableApplicationContext context = SpringApplication.run(ProductListApplication.class, args);
+		 * 	MyComponent myComponent = context.getBean(MyComponent.class);
+		 * 	myComponent.getMessage();
+		 * **/
+
+
+
+
 		//Normal object creation
 		/**
+		 * SpringApplication.run(ProductListApplication.class, args);
 		 * MyComponent myComponent = new MyComponent();
 		 * myComponent.getMessage();
 		 * **/
